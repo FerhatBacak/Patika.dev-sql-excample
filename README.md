@@ -123,7 +123,7 @@ WHERE first_name IN ('Penelope', 'Nick', 'Ed');
 
 ```
 SELECT * FROM film 
-where rental_rate IN(0.99,2.99,4.99) and replacement_cost IN(12.99,15.99,28.99);
+WHERE rental_rate IN(0.99,2.99,4.99) AND replacement_cost IN(12.99,15.99,28.99);
 
 ```
 
@@ -245,7 +245,7 @@ WHERE title LIKE 'T%' AND rating = 'G';
 ```
 
 SELECT COUNT(DISTINCT country) FROM country 
-where country like '_____';
+WHERE country like '_____';
 
 ```
 
@@ -259,7 +259,7 @@ where country like '_____';
 
 ```
 
-select Count(*) from city where city ~~*'%R';
+SELECT COUNT(*) FROM city WHERE city ~~*'%R';
 
 ```
 
@@ -277,10 +277,10 @@ select Count(*) from city where city ~~*'%R';
 
 ```
 
-select title from film
-where title like '%n'
-order by length desc
-limit 5;
+SELECT title FROM film
+WHERE title LIKE '%n'
+ORDER BY length desc
+LIMIT 5;
 
 ```
 
@@ -294,11 +294,11 @@ limit 5;
 
 ```
 
-select title from film
-where title like '%n'
-order by length 
-offset 5
-limit 5;
+SELECT title FROM film
+WHERE title LIKE '%n'
+ORDER BY length 
+OFFSET 5
+LIMIT 5;
 
 ```
 
@@ -312,12 +312,77 @@ limit 5;
 
 ```
 
-select * from customer 
-where store_id=1
-order by last_name
-limit 4;
+SELECT * FROM customer 
+WHERE store_id=1
+ORDER BY last_name
+LIMIT 4;
 
 ```
+
+<br>
+
+<hr>
+
+<br>
+
+## SQL Ödev 06 -- Aggregate Fonksiyonları
+
+<br>
+
+<hr>
+
+<br>
+
+1- <Strong>Film</Strong> tablosunda bulunan <Strong>rental_rate</Strong> sütunundaki değerlerin ortalaması nedir ?
+
+```
+SELECT AVG(rental_rate) FROM film; 
+
+```
+<br>
+
+<hr>
+
+<br>
+
+2- <Strong>film</Strong> tablosunda bulunan filmlerden kaç tanesi 'C' karakteri ile başlar ?
+
+```
+
+SELECT COUNT(*) FROM film WHERE title LIKE 'C%';
+
+```
+
+<br>
+
+<hr>
+
+<br>
+
+3- <strong>film</strong> tablosunda bulunan filmlerden <strong>rental_rate</strong> değeri 0.99 a eşit olan en uzun <strong> length</strong> filmi kaç dakikadır ?
+
+```
+
+SELECT MAX(length) FROM film WHERE rental_rate=0.99;
+
+```
+
+<br>
+
+<hr>
+
+<br>
+
+4- <strong>customer</strong> tablosunda bulunan filmlerin uzunluğu 150 dakikadan büyük olanlarına ait kaç farklı
+<strong>replacement_cost</strong> değeri vardır ?
+
+```
+
+SELECT COUNT(DISTINCT(replacement_cost)) FROM film 
+WHERE length>150
+
+```
+
 
 
 
