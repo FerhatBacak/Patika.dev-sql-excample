@@ -263,6 +263,72 @@ select Count(*) from city where city ~~*'%R';
 
 ```
 
+<br>
+
+## SQL Ödev 05 | OFFSET ve LIMIT
+
+<br>
+
+<hr>
+
+<br>
+
+1- <strong>film</strong> tablosunda bulunan ve film ismi <strong>title</strong> 'n' karakteri ile biten en uzun length 5 filmi sıralayınız.
+
+```
+
+select title from film
+where title like '%n'
+order by length desc
+limit 5;
+
+```
+
+<br>
+
+<hr>
+
+<br>
+
+2- <strong>film</strong> tablosunda bulunan ve film ismi <strong>title</strong> 'n' karakteri ile biten en kısa <strong>length</strong> ikinci(6,7,8,9,10) 5 filmi (6,7,8,9,10) sıralayınız
+
+```
+
+select title from film
+where title like '%n'
+order by length 
+offset 5
+limit 5;
+
+```
+
+<br>
+
+<hr>
+
+<br>
+
+3- customer tablosunda bulunan last_name sütununda göre azalan yapılan sıralamada store_id 1 olmak koşuluyla ilk 4 veriyi sıralayınız
+
+```
+
+select * from customer 
+where store_id=1
+order by last_name
+limit 4;
+
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
