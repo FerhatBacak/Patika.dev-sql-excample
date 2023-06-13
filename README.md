@@ -249,15 +249,19 @@ where country like '_____';
 
 ```
 
-select Count(*) from city where city ~~*'%R';
-
-```
-
 <br>
 
 <hr>
 
 <br>
+
+5- <strong>city</strong> tablosundaki şehir isimlerinin kaç tanesi <strong>'R'</strong> veya <strong>r</strong> karakteri ile biter ?  
+
+```
+
+select Count(*) from city where city ~~*'%R';
+
+```
 
 
 
