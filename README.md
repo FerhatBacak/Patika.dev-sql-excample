@@ -308,7 +308,7 @@ limit 5;
 
 <br>
 
-3- customer tablosunda bulunan last_name sütununda göre azalan yapılan sıralamada store_id 1 olmak koşuluyla ilk 4 veriyi sıralayınız
+3- <strore>customer</store> tablosunda bulunan <store>last_name</store> sütununda göre azalan yapılan sıralamada <store>store_id</store> 1 olmak koşuluyla ilk 4 veriyi sıralayınız
 
 ```
 
