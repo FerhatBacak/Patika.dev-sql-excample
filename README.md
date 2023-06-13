@@ -383,6 +383,68 @@ WHERE length>150
 
 ```
 
+<br>
+
+## SQL Ödev 07 | Group By and Having
+
+<br>
+
+<hr>
+
+<br>
+
+1- <strong>film</strong> tablosunda bulunan filmleri <strong>rating</strong> değerine göre gruplayınız.
+
+```
+SELECT rating FROM film GROUP BY rating;
+
+```
+
+<br>
+
+<hr>
+
+<br>
+
+2- <strong>film</strong> tablosunda bulunan filmleri <strong>replacement_cost</strong> sütununa göre grupladığımızda film sayısı
+50 den fazla olan <strong>replacement_cost</strong> değerini ve karşılık gelen film sayısını sıralayınız.
+
+```
+SELECT replacement_cost,COUNT(*) FROM film 
+GROUP BY replacement_cost
+HAVING COUNT(*)>50;
+
+```
+
+<br>
+
+<hr>
+
+<br>
+
+3- <strong>customer</strong> tablosunda bulunan <strong>store_id</strong> değerine karşılık gelen müşteri sayıları nelerdir ?
+
+```
+SELECT store_id,COUNT(*) FROM customer
+GROUP BY store_id;
+
+```
+
+<br>
+
+<hr>
+
+<br>
+
+4- <strong>city</strong> tablosunda bulunan şehir verilerini <strong>country_id</strong> sütununa göre gruplandırdıktan sonra en fazla şehir sayısı barındıran <strong>country_id</strong> bilgisini ve şehir sayısını paylaşınız.
+
+```
+SELECT country_id,COUNT(*) FROM city
+GROUP BY country_id
+ORDER BY COUNT(*) DESC
+LIMIT 1;
+
+```
 
 
 
