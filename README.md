@@ -83,7 +83,7 @@ AND NOT (rental_rate = 2.99 OR rental_rate = 4.99);
 
 <br>
 
-## SQL Ödev 02 | BETWEEN ve IN
+## SQL Ödev 02 -- BETWEEN ve IN
 
 <br>
 
@@ -189,7 +189,7 @@ WHERE title LIKE 'C%' AND length > 90 AND rental_rate = 2.99;
 
 <br>
 
-## SQL Ödev 04 | COUNT ve DISTINCT
+## SQL Ödev 04 -- COUNT ve DISTINCT
 
 <br>
 
@@ -265,7 +265,7 @@ SELECT COUNT(*) FROM city WHERE city ~~*'%R';
 
 <br>
 
-## SQL Ödev 05 | OFFSET ve LIMIT
+## SQL Ödev 05 -- OFFSET ve LIMIT
 
 <br>
 
@@ -385,7 +385,7 @@ WHERE length>150
 
 <br>
 
-## SQL Ödev 07 | Group By and Having
+## SQL Ödev 07 -- Group By and Having
 
 <br>
 
@@ -452,7 +452,7 @@ LIMIT 1;
 
 <br>
 
-## SQL Ödev 08 | Tablo Oluşturma Verileri Güncelleme
+## SQL Ödev 08 -- Tablo Oluşturma Verileri Güncelleme
 
 <br>
 
@@ -616,7 +616,7 @@ RETURNING *;
 
 <br>
 
-## SQL Ödev 09 | INNER JOIN
+## SQL Ödev 09 -- INNER JOIN
 
 1-) city tablosu ile country tablosunda bulunan şehir (city) ve ülke (country) isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız.
 
@@ -664,7 +664,7 @@ INNER JOIN rental r ON (c.customer_id = r.customer_id);
 
 <br>
 
-## SQL Ödev 10 | LEFT JOIN, RIGHT JOIN, FULL JOIN
+## SQL Ödev 10 -- LEFT JOIN, RIGHT JOIN, FULL JOIN
 
 1-) city tablosu ile country tablosunda bulunan şehir (city) ve ülke (country) isimlerini birlikte görebileceğimiz LEFT JOIN sorgusunu yazınız.
 
@@ -707,12 +707,103 @@ RIGHT JOIN payment p ON (c.customer_id = p.customer_id);
 ```
 
 SELECT p.payment_id, c.first_name, c.last_name FROM payment p
-FULL JOIN customer c ON c.customer_id= p.customer_id
+FULL JOIN customer c ON (c.customer_id= p.customer_id);
 
 ```
 
 
 <br>
+
+## SQL Ödev 11 -- UNION, INTERSECT ve EXCEPT
+
+1-) actor ve customer tablolarında bulunan first_name sütunları için tüm verileri sıralayalım.
+
+
+
+```
+
+(SELECT first_name 
+FROM actor)
+UNION 
+(SELECT first_name
+FROM customer);
+
+```
+
+
+<br>
+<br>
+<br>
+
+2-) actor ve customer tablolarında bulunan first_name sütunları için kesişen verileri sıralayalım.
+
+
+
+```
+
+(SELECT first_name 
+FROM actor)
+INTERSECT
+(SELECT first_name
+FROM customer);
+
+```
+
+
+<br>
+<br>
+<br>
+
+3-) actor ve customer tablolarında bulunan first_name sütunları için ilk tabloda bulunan ancak ikinci tabloda bulunmayan verileri sıralayalım.
+
+
+
+```
+
+(SELECT first_name 
+FROM actor )
+EXCEPT 
+(SELECT first_name 
+FROM customer);
+
+```
+
+
+<br>
+<br>
+<br>
+
+4-) İlk 3 sorguyu tekrar eden veriler için de yapalım.
+
+
+
+```
+
+(SELECT first_name 
+FROM actor)
+UNION ALL
+(SELECT first_name
+FROM customer);
+
+
+(SELECT first_name 
+FROM actor)
+INTERSECT ALL
+(SELECT first_name
+FROM customer);
+
+
+(SELECT first_name 
+FROM actor )
+EXCEPT ALL
+(SELECT first_name 
+FROM customer);
+
+```
+
+
+<br>
+
 
 
 
