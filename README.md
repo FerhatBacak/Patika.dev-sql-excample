@@ -879,7 +879,7 @@ ORDER BY transaction_count DESC;
 
 ```
 
-### Paylaşılan sorgular PostgreSQL de yazılmıştır..
+### Paylaşılan sorgular PostgreSQL de yazılmıştır.
 
 
 
